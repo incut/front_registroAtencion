@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { PersonaListComponent } from './component/persona-list/persona-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [PersonaListComponent],
+  template: `
+    <h1>Método de listar personas registradas</h1>
+    <app-persona-list></app-persona-list>
+  `
 })
-export class AppComponent {
-  title = 'registro_atencion';
-}
+export class AppComponent {}
+
+//selector: 'app-root',
+//selector: 'app-persona-list'
