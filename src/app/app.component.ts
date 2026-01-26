@@ -14,6 +14,8 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 
     <button routerLink="/personas">Personas</button>
     <button routerLink="/motivos">Motivos</button>
+    <button routerLink="/historial">Historial</button>
+
 
     <hr>
 

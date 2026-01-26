@@ -10,8 +10,8 @@ import { routes } from './app/app.routes';
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
-    provideHttpClient()]
-  
+    provideHttpClient()
+  ]
 });
 /*
 bootstrapApplication(PersonaListComponent, appConfig)

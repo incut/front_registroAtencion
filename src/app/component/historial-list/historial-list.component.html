@@ -1,0 +1,25 @@
+
+<table class="table table-hover">
+    <thead>
+        <h2>Lista de historiales</h2>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Motivo</th>
+            <th scope="col">Notas</th>
+            <th scope="col">Persona</th>
+            <th scope="col">Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of historiales">
+            <th scope="row">{{item.historialId}}</th>
+            <td>{{item.motivo?.motivo}}</td> <!-- Mostrar nombre del motivo -->
+            <td>{{item.notes}}</td>
+            <td>{{item.persona?.firstName}} {{item.persona?.lastName}}</td> <!-- Nombre completo -->
+            <td>{{item.timeStamp | date: 'dd/MM/yyyy - HH:mm'}}</td> <!-- Fecha con formato -->
+        </tr>
+    </tbody>
+</table>
+
+
+    
