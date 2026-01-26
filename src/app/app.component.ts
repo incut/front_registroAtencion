@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
 import { PersonaListComponent } from './component/persona-list/persona-list.component';
 import { MotivoListComponent } from './component/motivo-list/motivo-list.component';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [PersonaListComponent, MotivoListComponent],
+  imports: [RouterOutlet, RouterLink],
   template: 
   `
-    <h1>Método de listar personas registradas</h1>
-    <app-persona-list></app-persona-list>
-    <h1>Motivos registrados</h1>
-    <app-motivo-list></app-motivo-list>
+   <h1>Gestión</h1>
+
+    <button routerLink="/personas">Personas</button>
+    <button routerLink="/motivos">Motivos</button>
+
+    <hr>
+
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent {}
