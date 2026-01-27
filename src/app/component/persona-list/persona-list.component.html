@@ -1,15 +1,18 @@
 
+   <button class="btn btn-primary" [routerLink]="['/nueva-persona']">
+  Nueva Persona
+</button>
 <table class="table table-hover">
+ 
     <thead>
-        <h2>listado de personas</h2>
-            <tr>
+        <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Correo Electrónico</th>
                 <th scope="col">Dirección</th>
-            </tr>
+        </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of personas">

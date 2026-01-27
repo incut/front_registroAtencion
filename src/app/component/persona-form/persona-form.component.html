@@ -1,0 +1,50 @@
+<!-- persona-form.component.html -->
+<h2>Agregar Nueva Persona</h2>
+
+<form [formGroup]="personaForm" (ngSubmit)="submit()">
+
+  <div>
+    <label for="dni">DNI *</label>
+    <input id="dni" type="number" formControlName="dni" />
+    <div *ngIf="personaForm.get('dni')?.invalid && personaForm.get('dni')?.touched" style="color:red">
+      DNI es obligatorio
+    </div>
+  </div>
+
+  <div>
+    <label for="firstName">Nombre *</label>
+    <input id="firstName" type="text" formControlName="firstName" />
+    <div *ngIf="personaForm.get('firstName')?.invalid && personaForm.get('firstName')?.touched" style="color:red">
+      Nombre es obligatorio
+    </div>
+  </div>
+
+  <div>
+    <label for="lastName">Apellido *</label>
+    <input id="lastName" type="text" formControlName="lastName" />
+    <div *ngIf="personaForm.get('lastName')?.invalid && personaForm.get('lastName')?.touched" style="color:red">
+      Apellido es obligatorio
+    </div>
+  </div>
+
+  <div>
+    <label for="cellphone">Celular</label>
+    <input id="cellphone" type="text" formControlName="cellphone" />
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" />
+  </div>
+
+  <div>
+    <label for="adress">Dirección</label>
+    <input id="adress" type="text" formControlName="adress" />
+  </div>
+
+  <br>
+
+  <button type="submit" [disabled]="personaForm.invalid">Guardar</button>
+  <button type="button" routerLink="/personas">Volver</button>
+
+</form>

@@ -17,5 +17,9 @@ export class PersonaService {
   getPersonaList():Observable<Persona []>{
     return this.http.get<Persona[]>(this.api);
 
+    
   }
+  createPersona(persona: Persona): Observable<Persona> {
+    return this.http.post<Persona>(this.api, persona);
+}
 }

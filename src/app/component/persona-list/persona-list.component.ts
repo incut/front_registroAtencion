@@ -3,12 +3,13 @@ import { Persona } from '../../Persona';
 import { PersonaService } from '../../service/persona.service';
 import { NgFor, NgForOf } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 //decordaror de componente con propiedades
 @Component({
   selector: 'app-persona-list',
   standalone: true,
-  imports: [NgForOf],
+  imports: [NgForOf, RouterLink],
   templateUrl: './persona-list.component.html',
   styleUrl: './persona-list.component.css'
 })
