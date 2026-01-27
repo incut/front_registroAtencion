@@ -4,6 +4,7 @@ import { MotivoListComponent } from './component/motivo-list/motivo-list.compone
 import { HistorialListComponent } from './component/historial-list/historial-list.component';
 import { HistorialFormComponent } from './component/historial-form/historial-form.component';
 import { PersonaFormComponent } from './component/persona-form/persona-form.component';
+import { MotivoFormComponent } from './component/motivo-form/motivo-form.component';
 
 export const routes: Routes = [
 {path : 'personas', component: PersonaListComponent},
@@ -11,5 +12,6 @@ export const routes: Routes = [
 {path: 'historial', component: HistorialListComponent},
 {path: 'nuevo-historial', component: HistorialFormComponent},
 {path: 'nueva-persona', component: PersonaFormComponent },
+{ path: 'nuevo-motivo', component: MotivoFormComponent },
 {path : '', redirectTo: 'personas', pathMatch: 'full'}
 ];

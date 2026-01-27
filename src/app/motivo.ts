@@ -1,7 +1,6 @@
-export class Motivo {
-    constructor(
-        public motivoId : number,
-        public motivo : string,
-        public motivo_historial_fk : [] //revisar
-    ){}
+export interface Motivo {
+  motivoId?: number;
+  motivo: string;
+  motivo_historial_fk?: number;
 }
+

@@ -15,6 +15,8 @@ export class MotivoService {
     //la clase observable es un patron de diseño asincrónico
     getMotivoList():Observable<Motivo []>{
       return this.http.get<Motivo[]>(this.api);
-  
+  }
+    createMotivo(motivo: Motivo): Observable<Motivo> {
+    return this.http.post<Motivo>(this.api, motivo);
     }
 }

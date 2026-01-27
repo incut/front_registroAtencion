@@ -3,13 +3,14 @@ import { Motivo } from '../../motivo';
 import { MotivoService } from '../../service/motivo.service';
 import {NgFor, NgForOf} from '@angular/common'
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 
 //decordaror de componente con propiedades
 @Component({
   selector: 'app-motivo-list',
   standalone: true,
-  imports: [NgForOf],
+  imports: [NgForOf, RouterLink],
   templateUrl: './motivo-list.component.html',
   styleUrl: './motivo-list.component.css'
 })

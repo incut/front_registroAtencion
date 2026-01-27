@@ -1,0 +1,20 @@
+<h2>Nuevo Motivo</h2>
+
+<form [formGroup]="motivoForm" (ngSubmit)="submit()">
+
+  <div>
+    <label>Motivo *</label>
+    <input type="text" formControlName="motivo" />
+  </div>
+
+  <br>
+
+  <button type="submit" [disabled]="motivoForm.invalid">
+    Guardar
+  </button>
+
+  <button type="button" routerLink="/motivos">
+    Volver
+  </button>
+
+</form>
