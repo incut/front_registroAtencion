@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MotivoService } from '../../service/motivo.service';
+import { EventEmitter, Output} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-motivo-form',
@@ -12,7 +15,11 @@ import { MotivoService } from '../../service/motivo.service';
   styleUrls: ['./motivo-form.component.css']
 })
 export class MotivoFormComponent {
+@Output() cancel = new EventEmitter<void>();
 
+  onCancel() {
+    this.cancel.emit();
+  }
   motivoForm: FormGroup;
 
   constructor(
