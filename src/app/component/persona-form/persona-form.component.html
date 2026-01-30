@@ -4,6 +4,12 @@
 <form [formGroup]="personaForm" (ngSubmit)="submit()">
 
   <div>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="DNI" aria-label="DNI" aria-describedby="basic-addon1">
+       <span class="input-group-text" id="basic-addon2">@example.com</span>
+    </div>
+
     <label for="dni">DNI *</label>
     <input id="dni" type="number" formControlName="dni" />
     <div *ngIf="personaForm.get('dni')?.invalid && personaForm.get('dni')?.touched" style="color:red">

@@ -15,7 +15,8 @@
 <div *ngIf="errorDni" class="text-center mt-3 text-danger">
   ❌ {{ errorDni }}
   <br>
-  <button class="btn btn-primary mt-2" (click)="openPersonaForm()">
-    Crear nueva persona
-  </button>
+  <button class="btn btn-primary mt-2" (click)="openPersonaForm()">Crear nueva persona</button>
+</div>
+<div *ngIf="showPersonaForm">
+  <!-- tu formulario -->
 </div>

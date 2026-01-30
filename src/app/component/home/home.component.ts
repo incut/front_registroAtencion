@@ -11,7 +11,12 @@ import { subscribe } from 'diagnostics_channel';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  
+  showPersonaForm = false;
 
+  openPersonaForm(){
+     this.showPersonaForm = true;       
+  }
   dni: string = '';
   personaEncontrada: any = null;
   errorDni: string = '';
@@ -27,7 +32,7 @@ export class HomeComponent {
     
     console.log('DNI ingresado:', this.dni);
   }
-
+  
   buscarPersona() {
   this.personaService.buscarPorDni(this.dni).subscribe({
     next:(persona) => { 
