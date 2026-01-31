@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PersonaService } from '../../service/persona.service';
-import { subscribe } from 'diagnostics_channel';
+import { PersonaFormComponent } from '../persona-form/persona-form.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PersonaFormComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -1,5 +1,4 @@
 <h3 class="text-center mb-4">Programa de Registro</h3>
-
 <input
   inputmode="numeric"  
   type="text"
@@ -18,5 +17,5 @@
   <button class="btn btn-primary mt-2" (click)="openPersonaForm()">Crear nueva persona</button>
 </div>
 <div *ngIf="showPersonaForm">
-  <!-- tu formulario -->
+  <app-persona-form></app-persona-form>
 </div>
