@@ -19,16 +19,21 @@ export class HomeComponent {
   openPersonaForm(){
      this.showPersonaForm = true;       
   }
-  dni: string = '';
+
+ closePersonaForm(){
+     this.showPersonaForm = false;       
+  }
+
+  dni!: number;
   personaEncontrada: any = null;
-  errorDni: string = '';
+  errorDni!: string | number;
   constructor(private personaService: PersonaService){}
 
   onDniChange(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.dni = input.value;
+    this.dni = Number(input.value);
 
-    if(this.dni.length >=5){
+    if(this.dni.toString().length >=5){
       this.buscarPersona();
     }
     
@@ -36,11 +41,12 @@ export class HomeComponent {
   }
   
   buscarPersona() {
-  this.personaService.buscarPorDni(this.dni).subscribe({
+  this.personaService.buscarPorDni(this.dni.toString()).subscribe({
     next:(persona) => { 
       this.personaEncontrada = persona;
-      this.errorDni = '';
+      this.errorDni = 0;
       console.log('Persona encontrada:', persona);
+      this.closePersonaForm();
     },
     error: () => {
       this.personaEncontrada = null;

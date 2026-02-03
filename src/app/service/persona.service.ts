@@ -24,6 +24,6 @@ export class PersonaService {
   }
 
   buscarPorDni(dni:string):Observable<any>{
-    return this.http.get(`${this.api}/dni${dni}`);
+    return this.http.get(`${this.api}/dni/${dni}`);
   }
 }
