@@ -4,13 +4,15 @@ import { PersonaService } from '../../service/persona.service';
 import { PersonaFormComponent } from '../persona-form/persona-form.component';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, Router} from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, PersonaFormComponent, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, PersonaFormComponent, ReactiveFormsModule, RouterLink, LoginComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -107,6 +109,9 @@ export class HomeComponent implements OnInit {
         this.personaForm.disable();
       });
   }
+
+
+submitUser(){}
 
 
 }

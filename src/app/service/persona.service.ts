@@ -8,7 +8,9 @@ import { Persona } from '../Persona';
 })
 export class PersonaService {
 
-  private api : string = 'http://localhost:8080/api/personas';
+  private api : string = 'http://10.0.0.155:8000/spring/api/personas';
+                       /* http://localhost:8080/api/personas */
+                       /*${this.baseUrl}/spring/api/personas/dni/${dni}*/
 
   constructor(private http:HttpClient) { }
 

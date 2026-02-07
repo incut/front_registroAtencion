@@ -1,3 +1,58 @@
+<div id="navBar">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Registros</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Panel de administracion</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  </li>
+  <div class="d-flex">
+    <li>
+      
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Login
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Panel de Ingreso</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="contenedor-centrado">
+      <div class="modal-body">
+
+        <!-- form acceso de usuario -->
+        <app-login></app-login>
+
+<!--         <form action="">
+          <label for="">Usuario</label>
+          <input type="text">
+          <label for="">Contraseña</label>
+          <input type="password">
+        </form> -->
+
+      </div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+    </li>
+  </div>
+</ul>
+</div>
 <h3 class="text-center mb-4">Programa de Registro</h3>
 <input
   inputmode="numeric"  

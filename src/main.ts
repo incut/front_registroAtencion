@@ -1,18 +1,20 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
-import { PersonaListComponent } from './app/component/persona-list/persona-list.component';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './app/auth.interceptor'; // Asegúrate que la ruta sea correcta
 import { routes } from './app/app.routes';
-
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
-    provideHttpClient()
+    // Un solo provideHttpClient con la configuración de interceptores
+    provideHttpClient(
+      withInterceptors([authInterceptor]) 
+    ),
   ]
-});
+}).catch((err) => console.error(err));
+
 /*
 bootstrapApplication(PersonaListComponent, appConfig)
   .catch((err) => console.error(err));*/

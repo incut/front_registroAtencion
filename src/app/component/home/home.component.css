@@ -2,3 +2,11 @@
   margin-left: 30%;
   margin-top: 15%;
 }
+#navBar{
+  margin-bottom:5%;
+}
+
+form {
+    width: 50%; 
+    margin: 0 auto; 
+}
