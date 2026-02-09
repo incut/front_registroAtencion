@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
   console.log("MODO EDICION ACTIVADO"); // 👈 agregá esto
   this.modoEdicion = true;
   this.personaForm.enable();
-  this.personaForm.get('dni')?.disable();
+  this.personaForm.get('dni');
 }
 
   guardarCambios() {

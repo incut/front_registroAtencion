@@ -30,6 +30,6 @@ export class PersonaService {
   }
 
 actualizarPersona(id: number, persona: any) {
-  return this.http.put(`${this.api}/${id}`, persona);
+  return this.http.put(`${this.api}`, persona);
 }
 }
