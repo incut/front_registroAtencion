@@ -11,7 +11,7 @@
   <li class="nav-item">
     <a class="nav-link" href='/abm'>Panel de administracion</a>
   </li>
-  <div class="d-flex">
+ <div class="d-flex">
     <li>
       <div class="position-absolute top-1 end-0 me-3 d-flex align-items-center gap-2">
         <!-- Button trigger modal -->
@@ -39,7 +39,36 @@
           Logout
         </button>
       </div>
-      <!-- Modal -->
-<div
 
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  [class.show]="isLoginModalOpen"
+  [style.display]="isLoginModalOpen ? 'block' : 'none'"
+  [attr.aria-hidden]="!isLoginModalOpen"
 >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Panel de Ingreso</h1>
+        <button type="button" class="btn-close" (click)="closeLoginModal()" aria-label="Close"></button>
+      </div>
+      <div class="contenedor-centrado">
+      <div class="modal-body">
+
+        <!-- form acceso de usuario -->
+        <app-login (loginSuccess)="onLoginSuccess()"></app-login>
+      </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="isLoginModalOpen" (click)="closeLoginModal()"></div>
+    </li>
+  </div>
+</ul>

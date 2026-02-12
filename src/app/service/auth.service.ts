@@ -5,14 +5,10 @@ import { environment } from '../../environments/environment';
 import { tap, catchError, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-
-
-
 interface LoginResponse {
   token: string;
   user: { id: number; username: string };
 }
-
 
 @Injectable({
   providedIn: 'root'
