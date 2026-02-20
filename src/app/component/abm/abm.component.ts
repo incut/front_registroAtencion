@@ -24,6 +24,8 @@ interface ChartSeries {
 interface ChartImages {
   atenciones_por_dia_data_url?: unknown;
   atenciones_por_motivo_data_url?: unknown;
+  atenciones_por_dia_url?: unknown;
+  atenciones_por_motivo_url?: unknown;
 }
 
 interface HistorialChartsResponse {
@@ -200,8 +202,15 @@ export class AbmComponent implements OnInit, OnDestroy {
           return;
         }
         const images = resp?.images;
-        this.imgDia = this.toSafeString(images?.atenciones_por_dia_data_url);
-        this.imgMotivo = this.toSafeString(images?.atenciones_por_motivo_data_url);
+        const cacheBuster = Date.now();
+        this.imgDia = this.toChartImageSource(
+          images?.atenciones_por_dia_url ?? images?.atenciones_por_dia_data_url,
+          cacheBuster
+        );
+        this.imgMotivo = this.toChartImageSource(
+          images?.atenciones_por_motivo_url ?? images?.atenciones_por_motivo_data_url,
+          cacheBuster
+        );
 
         const lineSeries = resp?.series?.atenciones_por_dia;
         const barSeries = resp?.series?.atenciones_por_motivo;
@@ -260,6 +269,28 @@ export class AbmComponent implements OnInit, OnDestroy {
       return '';
     }
     return value.trim();
+  }
+
+  private toChartImageSource(value: unknown, cacheBuster: number): string {
+    const source = this.toSafeString(value);
+    if (!source) {
+      return '';
+    }
+
+    if (source.startsWith('data:')) {
+      return source;
+    }
+
+    const normalized = source.startsWith('http://') || source.startsWith('https://')
+      ? source
+      : `${environment.api}/${source.replace(/^\/+/, '')}`;
+
+    return this.withCacheBuster(normalized, cacheBuster);
+  }
+
+  private withCacheBuster(url: string, cacheBuster: number): string {
+    const separator = url.includes('?') ? '&' : '?';
+    return `${url}${separator}v=${cacheBuster}`;
   }
 
   private toStringArray(value: unknown): string[] {
